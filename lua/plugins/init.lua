@@ -20,8 +20,12 @@ return {
   	"williamboman/mason.nvim",
   	opts = {
   		ensure_installed = {
-  			"lua-language-server", "stylua",
-  			"html-lsp", "css-lsp" , "prettier"
+  			"lua-language-server",
+            "stylua",
+  			"html-lsp",
+            "css-lsp",
+            "prettier",
+            "gopls"
   		},
   	},
   },
@@ -30,11 +34,11 @@ return {
   	"nvim-treesitter/nvim-treesitter",
   	opts = {
   		ensure_installed = {
-  			"vim", 
-        "lua", 
+  		"vim",
+        "lua",
         "vimdoc",
-        "html", 
-        "css", 
+        "html",
+        "css",
         "go",
         "javascript",
         "typescript",
@@ -46,5 +50,47 @@ return {
         enable = true,
       },
   	},
+  },
+
+  {
+    "mfussenegger/nvim-dap",
+  },
+
+  {
+    "leoluz/nvim-dap-go",
+    ft = "go",
+    dependencies = "mfussenegger/nvim-dap",
+    config = function(_, opts)
+      require("dap-go").setup(opts)
+    end
+   },
+
+  {
+    "rcarriga/nvim-dap-ui",
+    lazy = false,
+    config = function(_, opts)
+      require("dapui").setup(opts)
+    end,
+    dependencies = {"mfussenegger/nvim-dap",
+    "nvim-neotest/nvim-nio"}
+  },
+
+  {
+    "github/copilot.vim",
+    lazy = false, -- to enable at start
+    config = function()
+    -- Mapping tab is already used by NvChad       
+      vim.g.copilot_no_tab_map = true;
+      vim.g.copilot_assume_mapped = true;
+      -- vim.g.copilot_tab_fallback = "";
+    end
+    -- The mapping is set to other key, see custom/lua/mappings  
+    -- -- or run <leader>ch to see copilot mapping section  end   
+  },
+
+  {
+    "kdheepak/lazygit.nvim",
+    lazy = false, -- to enable at start
+    dependencies = { "nvim-lua/plenary.nvim" },
   },
 }

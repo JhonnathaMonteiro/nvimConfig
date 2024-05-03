@@ -1,6 +1,5 @@
 vim.g.base46_cache = vim.fn.stdpath "data" .. "/nvchad/base46/"
 vim.g.mapleader = " "
-local opt = vim.opt
 
 -- bootstrap lazy and all plugins
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
@@ -38,15 +37,3 @@ require "nvchad.autocmds"
 vim.schedule(function()
   require "mappings"
 end)
-
--- custom
-vim.wo.relativenumber = true
-opt.tabstop = 4
-opt.shiftwidth = 4
-
-opt.belloff = "all"
-
-opt.clipboard = "unnamedplus"
-
-opt.inccommand = "split"
-opt.swapfile = false -- Living on the edge
