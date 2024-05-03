@@ -1,5 +1,6 @@
 # Notes
 
+ - This configuration works with version 2.5 of nvChad
  - Install all lsps using mason
  - Install delve for golang debug
 
