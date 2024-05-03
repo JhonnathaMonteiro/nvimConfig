@@ -5,3 +5,5 @@
 
 ## TODO
  - Better debugger
+    [x] Dap UI
+    [x] Better mapping
