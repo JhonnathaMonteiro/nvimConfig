@@ -17,24 +17,28 @@ return {
   },
 
   {
-  	"williamboman/mason.nvim",
-  	opts = {
-  		ensure_installed = {
-  			"lua-language-server",
-            "stylua",
-  			"html-lsp",
-            "css-lsp",
-            "prettier",
-            "gopls"
-  		},
-  	},
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "lua-language-server",
+        "stylua",
+        "html-lsp",
+        "css-lsp",
+        "prettier",
+        "clangd",
+        "gopls",
+        "typescript-language-server",
+        "eslint-lsp",
+        "prettierd"
+      },
+    },
   },
 
   {
-  	"nvim-treesitter/nvim-treesitter",
-  	opts = {
-  		ensure_installed = {
-  		"vim",
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "vim",
         "lua",
         "vimdoc",
         "html",
@@ -45,11 +49,11 @@ return {
         "tsx",
         "markdown",
         "markdown_inline",
-  		},
+      },
       ident = {
         enable = true,
       },
-  	},
+    },
   },
 
   {
@@ -63,7 +67,7 @@ return {
     config = function(_, opts)
       require("dap-go").setup(opts)
     end
-   },
+  },
 
   {
     "rcarriga/nvim-dap-ui",
@@ -71,21 +75,21 @@ return {
     config = function(_, opts)
       require("dapui").setup(opts)
     end,
-    dependencies = {"mfussenegger/nvim-dap",
-    "nvim-neotest/nvim-nio"}
+    dependencies = { "mfussenegger/nvim-dap",
+      "nvim-neotest/nvim-nio" }
   },
 
   {
     "github/copilot.vim",
     lazy = false, -- to enable at start
     config = function()
-    -- Mapping tab is already used by NvChad       
+      -- Mapping tab is already used by NvChad
       vim.g.copilot_no_tab_map = true;
       vim.g.copilot_assume_mapped = true;
       -- vim.g.copilot_tab_fallback = "";
     end
-    -- The mapping is set to other key, see custom/lua/mappings  
-    -- -- or run <leader>ch to see copilot mapping section  end   
+    -- The mapping is set to other key, see custom/lua/mappings
+    -- -- or run <leader>ch to see copilot mapping section  end
   },
 
   {

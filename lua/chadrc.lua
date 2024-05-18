@@ -5,8 +5,9 @@
 local M = {}
 
 M.ui = {
-    theme = "gruvchad",
-    -- theme = "tokyodark",
+    -- theme = "gruvchad",
+    theme = "chocolate",
+    -- theme = "kanagawa",
     -- theme_toggle = { "kanagawa", "one_light" },
 
 	-- hl_override = {
