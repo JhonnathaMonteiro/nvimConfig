@@ -22,6 +22,8 @@ for _, lsp in ipairs(servers) do
 end
 
 -- Golang
+capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true -- to fix when importing new packages with go
+
 lspconfig.gopls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
