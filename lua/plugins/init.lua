@@ -1,4 +1,15 @@
 return {
+
+  {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    lazy = false,
+    config = function()
+      require "configs.harpoon"
+    end,
+  },
+
   {
     "stevearc/conform.nvim",
     -- event = 'BufWritePre', -- uncomment for format on save
@@ -29,7 +40,7 @@ return {
         "gopls",
         "typescript-language-server",
         "eslint-lsp",
-        "prettierd"
+        "prettierd",
       },
     },
   },
@@ -74,7 +85,7 @@ return {
     dependencies = "mfussenegger/nvim-dap",
     config = function(_, opts)
       require("dap-go").setup(opts)
-    end
+    end,
   },
 
   {
@@ -83,8 +94,7 @@ return {
     config = function(_, opts)
       require("dapui").setup(opts)
     end,
-    dependencies = { "mfussenegger/nvim-dap",
-      "nvim-neotest/nvim-nio" }
+    dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
   },
 
   {
@@ -92,10 +102,10 @@ return {
     lazy = false, -- to enable at start
     config = function()
       -- Mapping tab is already used by NvChad
-      vim.g.copilot_no_tab_map = true;
-      vim.g.copilot_assume_mapped = true;
+      vim.g.copilot_no_tab_map = true
+      vim.g.copilot_assume_mapped = true
       -- vim.g.copilot_tab_fallback = "";
-    end
+    end,
     -- The mapping is set to other key, see custom/lua/mappings
     -- -- or run <leader>ch to see copilot mapping section  end
   },
