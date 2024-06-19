@@ -7,14 +7,18 @@ local M = {}
 M.ui = {
   -- theme = "gruvchad",
   -- theme = "chocolate",
-  -- theme = "kanagawa",
-  theme = "yoru",
+  -- theme = "yoru",
   -- theme = "monochrome",
   -- theme = "everforest",
   -- theme = "nightfox",
   -- theme = "everforest",
+
+  -- good shite
+  -- theme = "ayu_dark",
+  theme = "rosepine",
   -- theme = "everblush",
-  -- theme = "tokyonight",
+  -- theme = "rosepine",
+  -- theme = "kanagawa",
   -- theme_toggle = { "gruvbox", "material-darker" },
   statusline = {
     -- more opts
